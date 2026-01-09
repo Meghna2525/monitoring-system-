@@ -1,1 +1,26 @@
 print("meghna walundra")
+# List block devices
+lsblk
+
+# Create a mount point
+sudo mkdir -p /mnt/mydisk
+
+# Mount a device (example: /dev/sdb1)
+sudo mount /dev/sdb1 /mnt/mydisk
+
+# Check mounted filesystems
+df -h
+mount | grep sdb1
+
+# Unmount the device
+sudo umount /mnt/mydisk
+
+# Mount with filesystem type (example: ext4)
+sudo mount -t ext4 /dev/sdb1 /mnt/mydisk
+
+# Mount an ISO file
+sudo mount -o loop file.iso /mnt/iso
+
+# Permanent mount using /etc/fstab (example entry)
+# <device>    <mount_point>  <fs_type>  <options>    <dump> <pass>
+/dev/sdb1     /mnt/mydisk    ext4       defaults    0      2
